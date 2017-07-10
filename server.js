@@ -2,9 +2,9 @@ var express = require('express');
 var app = express();
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-//var db (still need to create)
+var db = process.env.MONGOD_URI || "mongodb://localhost/ms_properties"
 var methodOverride = require('method-override');
-//var mongoose(create first then add)
+var mongoose = require('mongoose');
 var port = process.env.PORT || 3000;
 
 //MIDDLEWARE
@@ -20,7 +20,7 @@ app.use(methodOverride(function(req, res){
   }
 }));
 
-//mongoose.connect(db);
+mongoose.connect(db);
 
 //CONTROLLERS
 
