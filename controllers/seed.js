@@ -12,7 +12,7 @@ router.get('/', function (req, res){
 });
 
 router.get('/currenthomes', function(req, res){
-  var currenthomes = [
+  var currentHomes = [
   {
     img: "http://bit.ly/2tzjYru",
     roomNum: "2",
@@ -33,8 +33,8 @@ router.get('/currenthomes', function(req, res){
 
   // home1.save();
 
-  console.log(currenthomes);
-  Homes.create(currenthomes, function(err){
+  console.log(currentHomes);
+  Homes.create(currentHomes, function(err){
     res.redirect('/seed');
   });
 });
