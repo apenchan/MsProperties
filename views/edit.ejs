@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Homes</title>
+</head>
+<body>
+  <h2>Edit</h2>
+  <form action='/<%=homes.id%>' method="POST" edit="editformid">
+    <input type="text" name="availablity" value="availablity">
+      <input type="hidden" name="_method" value="PUT"/>
+    <button>Submit</button>
+  </form>
+</body>
+</html>

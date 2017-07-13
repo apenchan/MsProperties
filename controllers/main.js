@@ -11,7 +11,7 @@ router.get('/', function(req, res){
 });
 
 //====================================
-//ARE NOT NEEDED, BUT ALREAADY WROTE
+//NEW and CREATE ARE NOT NEEDED AFTER DEPLOYMENT
 //====================================
 //NEW
 router.get('/new', function(req, res){
@@ -36,7 +36,34 @@ router.post('/', function(req,res){
 router.get('/:id', function(req, res){
   Homes.findById(req.params.id, function(req, homes){
     console.log(homes);
+    res.render('show.ejs', {homes});
+  });
+});
+
+//EDIT
+router.get('/:id/edit', function(req,res){
+  Homes.findById(req.params.id, function(err, homes){
+    console.log(homes);
     res.render('edit.ejs', {homes});
+  });
+});
+
+router.put('/:id', function(req, res){
+  var query = {'_id': req.params.id};
+  Homes.findOneAndUpdate(query, req.body, function(err, homes){
+    if (err){
+      console.log(err);
+    } else {
+      res.render('show.ejs', {homes})
+    }
+  });
+});
+
+//DELETE
+router.delete('/:id', function(req, res){
+  console.log(req.params.id);
+  Homes.findByIdAndRemove(req.params.id, function(){
+    res.redirect('/');
   });
 });
 
