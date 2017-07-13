@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 //Schema
-var homeSchema = new mongoose.Schema({
+var homesSchema = new mongoose.Schema({
   img: String,
   roomNum: String,
   availablity: String,
@@ -10,6 +10,6 @@ var homeSchema = new mongoose.Schema({
   description: String
 });
 
-var Home = mongoose.model('Home', homeSchema);
+var Homes = mongoose.model('Homes', homesSchema);
 
-module.exports = Home;
+module.exports = Homes;

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>HELLO</h1>
+  <ul class="show-homes">
+    <% for(var i = 0; i < homes.length; i++) { %>
+    <a href="/main/<%=homes[i].id%>"><img class="homeIndexPics" src="<%=homes[i].img%>"></a>
+    <li class="shows"><%=homes[i].city%></li>%>
+    <% } %>
+  </ul>
+</body>
+</html>
