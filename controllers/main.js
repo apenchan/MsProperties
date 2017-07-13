@@ -1,11 +1,11 @@
 var express = require('express');
-var router = express.Router;
-var Homes = require('../models/property.js');
+var router = express.Router();
+var Home = require('../models/property.js');
 
 router.get('/', function(req, res){
-  Homes.find(function(req, homes){
-    console.log(homes);
-  res.render('index.ejs', {homes});
+  Home.find(function(req, homes){
+    console.log(Home);
+  res.render('index.ejs', {Home});
   });
 });
 

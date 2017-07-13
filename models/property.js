@@ -1,14 +1,15 @@
 var mongoose = require('mongoose');
 
 //Schema
-var homesSchema = new mongoose.Schema({
+var homeSchema = new mongoose.Schema({
   img: String,
   roomNum: String,
   availablity: String,
   city: String,
-  bathroomNum: String
+  bathroomNum: String,
+  description: String
 });
 
-var Homes = mongoose.model('Homes', homesSchema);
+var Home = mongoose.model('Home', homeSchema);
 
-module.exports = Homes;
+module.exports = Home;
