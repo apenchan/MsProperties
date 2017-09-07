@@ -1,6 +1,6 @@
 var express = require('express');
-// var mongoose = require('mongoose')
-// var db = process.env.MONGODB_URI || "mongodb://localhost/ms_properties";
+var mongoose = require('mongoose')
+var db = process.env.MONGODB_URI || "mongodb://localhost/ms_properties";
 var router = express.Router();
 var Homes = require('../models/property.js');
 
@@ -12,8 +12,7 @@ router.get('/', function (req, res){
 });
 
 router.get('/currenthomes', function(req, res){
-  var currentHomes = [
-  {
+  var currentHomes = [{
     img: "http://bit.ly/2tzjYru",
     roomNum: "2",
     availablity: "No",
@@ -28,8 +27,7 @@ router.get('/currenthomes', function(req, res){
     city: "Palm Beach Gardens",
     bathroomNum: "3",
     description: "Washer and dryer located on home"
-  }
-  ];
+  }];
 
   // home1.save();
 

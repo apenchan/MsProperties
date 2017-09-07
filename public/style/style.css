@@ -1,0 +1,26 @@
+h1{
+	color: red;
+}
+.home-image1{
+	height: 400px;
+	width: 450px;
+}
+.home-image2{
+	height: 400px;
+	width: 450px;
+}
+.home-image3{
+	height: 400px;
+	width: 450px;
+}
+.homeIndexPics{
+	height: 400px;
+	width: 450px;
+}
+.list-homes{
+	text-align: center;
+}
+.index-homes{
+	display: inline-block;
+	font-size: 15px;
+}

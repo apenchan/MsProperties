@@ -2,15 +2,66 @@
 <html>
 <head>
   <title></title>
+  <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../style/style.css">
 </head>
 <body>
-  <h1>HELLO</h1>
-  <ul class="show-homes">
-    <% for(var i = 0; i < homes.length; i++) { %>
-    <a href="/<%=homes[i].id%>"><img class="homeIndexPics" src="<%=homes[i].img%>"></a>
-    <li class="shows"><%=homes[i].city%></li>%>
-    <% } %>
-  </ul>
+  <section class="opening-section">
+  	<nav class="navbar navbar-default">
+	  	<div class="container-fluid">
+	  		<div class="navbar-header">
+	  			<a class="navbar-brand" href="#">MS Properties</a>
+	  		</div>
+	  		<ul class="nav navbar-nav">
+	  			<li><a href="#">Homes</a></li>
+	  			<li><a href="#">About Us</a></li>
+	  			<li><a href="#">Locations</a></li>
+	  			<li><a href="#">Contact</a></li>
+	  		</ul>
+	  	</div>
+		</nav>
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		  <ol class="carousel-indicators">
+		    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		    <li data-target="#myCarousel" data-slide-to="1"></li>
+		    <li data-target="#myCarousel" data-slide-to="2"></li>
+		  </ol>
+			  <div class="carousel-inner">
+				  <div class="home-image item active">
+		        <img class="home-image1" src="images/20107325_10210621009377291_320302906_o.jpg"/>
+		      </div>
+		      <div class="home-image item">
+		        <img class="home-image2" src="images/20132825_10210621009617297_895023277_o.jpg"/>
+		      </div>
+		      <div class="home-image item">
+		        <img class="home-image3" src="images/20132928_10210621010017307_232664343_o.jpg"/>
+		      </div>
+				  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+			  </div>
+		</div>
+  </section>
+  <section class="list-homes">
+	<ul class="list-homes-index">
+	<% for(var i = 0; i < homes.length; i++) { %>
+		<li class="index-homes">
+			<a href="/<%=homes[i].id%>">
+				<img class="homeIndexPics" src="images/<%=homes[i].img%>"><br>
+				<%=homes[i].city%>
+			</a>
+		</li>
+	<% } %>
+	</ul>
+  </section>
   <a href="/new">Add Home</a>
+  <script type="text/javascript" src="jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="bootstrap/dist/js/bootstrap.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>
